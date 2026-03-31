@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pintorials - Coming Soon</title>
+    <meta name="description" content="Pintorials - Master the modes. Coming soon.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #0f172a;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --accent: #3b82f6;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: #0f172a;
+            background: radial-gradient(circle at center, #1e293b 0%, #0f172a 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--text-primary);
+            overflow: hidden;
+        }
+
+        /* Animated background elements */
+        .background-blobs {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .blob {
+            position: absolute;
+            filter: blur(80px);
+            opacity: 0.5;
+            animation: float 10s infinite alternate ease-in-out;
+            border-radius: 50%;
+        }
+
+        .blob-1 {
+            width: 400px;
+            height: 400px;
+            background: #3b82f6;
+            top: -100px;
+            left: -100px;
+            animation-delay: 0s;
+        }
+
+        .blob-2 {
+            width: 300px;
+            height: 300px;
+            background: #8b5cf6;
+            bottom: -50px;
+            right: -50px;
+            animation-delay: -5s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(0, 0) scale(1);
+            }
+
+            50% {
+                transform: translate(30px, 50px) scale(1.1);
+            }
+
+            100% {
+                transform: translate(-20px, 20px) scale(0.9);
+            }
+        }
+
+        .container {
+            position: relative;
+            z-index: 10;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 4rem 3rem;
+            text-align: center;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            max-width: 500px;
+            width: 90%;
+            animation: fadeIn 1s ease-out;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .container:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            max-width: 350px;
+            width: 120%;
+            height: auto;
+            margin-bottom: 2.5rem;
+            filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.1));
+            animation: pulse 4s infinite ease-in-out;
+            transition: filter 0.3s ease;
+        }
+
+        .logo:hover {
+            filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.4));
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.03);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin: 0 0 0.5rem 0;
+            background: linear-gradient(135deg, #fff 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1px;
+        }
+
+        h2 {
+            font-size: 1.25rem;
+            font-weight: 500;
+            color: #94a3b8;
+            margin: 0;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 40px;
+            height: 3px;
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+
+        .container:hover h2::after {
+            width: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <div class="container">
+        <img src="pintorials-small-logo-clear.png" alt="Pintorials Logo" class="logo">
+        <h1>Coming Soon</h1>
+        <h2>Master the modes</h2>
+    </div>
+</body>
+
+</html>
